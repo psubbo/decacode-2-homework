@@ -6,7 +6,7 @@ function processParams(p) {
     }
     aver = sum / p.length;
     console.log(p);
-    console.log(sum);
-    console.log(aver);
+    console.log('Сумма: ' + sum);
+    console.log('Среднее арифметическое: ' + aver);
 };
 processParams(process.argv.slice(2));
