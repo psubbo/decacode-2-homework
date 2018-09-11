@@ -1,12 +1,9 @@
 function processParams(p) {
-    let sum = 0;
-    let aver = 0;
-    for (let i = 0; i < p.length; i++) {
-        sum = sum + +p[i];
-    }
-    aver = sum / p.length;
-    console.log(p);
-    console.log('Сумма: ' + sum);
-    console.log('Среднее арифметическое: ' + aver);
+    var result = p.reduce(function(sum, current) {
+        return sum + +current;
+    }, 0);
+    console.log(p)
+    console.log('Сумма: ' + result);
+    console.log('Среднее арифметическое: ' + result / p.length);
 };
 processParams(process.argv.slice(2));
