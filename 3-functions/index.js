@@ -38,3 +38,5 @@ console.log('Количество пользователей: ' + users.length);
 console.log('Средний возраст пользователей: ' + countAverageAge(users));
 console.log('Все пользователи: ' + createList(users));
 console.log('Художники:  - ' + findPainters(users));
+
+//DONE
