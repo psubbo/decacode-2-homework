@@ -1,0 +1,21 @@
+body {
+    display: flex;
+}
+.main {
+    justify-content: center;
+    align-items: center; 
+    height: 100%;
+    width: 500px;
+    background-color: red;
+
+};
+.dataSlides { 
+height: 200px;
+background-color: green;
+};
+
+.page {
+background-color: blue;
+
+}
+
