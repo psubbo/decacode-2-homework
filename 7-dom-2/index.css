@@ -1,21 +1,79 @@
-body {
-    display: flex;
+.slider {
+	width:600px;
+	height:400px;
+	margin: 0 auto;
+	position:relative;
 }
-.main {
-    justify-content: center;
-    align-items: center; 
-    height: 100%;
-    width: 500px;
-    background-color: red;
-
-};
-.dataSlides { 
-height: 200px;
-background-color: green;
-};
-
-.page {
-background-color: blue;
-
+.slide {
+	position:absolute;
+	opacity:0;
+	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+    visibility: hidden;
+	top:0px;
+	left:0px;
+	width:600px;
+	height:400px;
 }
 
+.active {
+	visibility:visible;
+    opacity:1;
+    transition-delay:0s;
+}
+
+.slider-nav{
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    opacity:0.8;
+}
+
+.slider-nav .prev{
+    padding-left:5px;
+    padding-top: 10px;
+	width:50px;
+    height:30px;
+    background-color: gray;
+	text-align: left;
+    top: 45%;
+    left: 1%;
+    position: absolute;
+	cursor:pointer;
+	opacity:0.8;
+}
+.slider-nav .next{
+	width:50px;
+    height:30px;
+    padding-right:5px;
+    padding-top: 10px;
+    background-color: gray;
+	text-align: right;
+    top: 45%;
+    right: 1%;
+    position: absolute;
+	cursor:pointer;
+	opacity:0.8;
+}
+
+.slider-nav .prev:hover,.slider-nav .next:hover {opacity: 1;}
+
+.slider-tabs{
+	position:absolute;
+	left:45%;
+	bottom:30px;
+	padding:0px;
+	margin:0px;
+}
+
+.slider-tab li{
+	display:inline-block;
+	background-color:#ffffff;
+	border-radius:50%;
+	width:10px;
+	height:10px;
+	margin:6px;
+	cursor:pointer;
+	
+}
+.slider-tab span{display: block;color: transparent;}
+.slider-tab li:hover, .slider-tab li.active{background-color:#2980b9;}
