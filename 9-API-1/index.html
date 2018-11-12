@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Breweries</title>
+  </head>
+  <body>
+    
+    <form id ="form">
+        <input type="text" >
+        <button type="submit">Gimme some beeer</button>
+    </form>
+
+    <script type="text/javascript">
+        (() => {
+  
+          const $form = document.getElementById('form');
+          $form.addEventListener('submit', getBrew);
+            
+          function getBrew(event){
+              event.preventDefault();
+              const url='https://api.openbrewerydb.org/breweries?by_name='+event.currentTarget[0].value;
+              fetch(url)
+              .then(response => response.json())
+              .then(data => {
+               
+                for (let i = 0; i <= data.length-1; i++ ) {
+                    const $list = document.createElement('ul');
+                    document.body.appendChild($list);
+                                       
+                    $list.innerHTML = "<li> Номер в картотеке: "+data[i].id+"</li><li> Название: "+data[i].name+"</li><li> Страна: "+data[i].country+"</li><li> Штат: "+data[i].state+"</li><li> Город: "+data[i].city+"</li><li> Улица: "+data[i].street+"</li><li> Широта: "+data[i].latitude+"</li><li> Долгота: "+data[i].longitude+"</li><li> Тип: "+data[i].brewery_type+"</li><li> Телефон: "+data[i].phone+"</li><li> Сайт: "+data[i].website_url+"</li><li> Последнее обновление: "+data[i].updated_at+"</li>"
+                };
+              });
+          };  
+
+
+        })();
+      </script>
+  </body>
+</html>

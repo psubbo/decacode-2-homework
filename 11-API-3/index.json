@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "title": "Apples",
+    "count": 7
+  },
+  {
+    "id": "2",
+    "title": "Milk",
+    "count": 1
+  },
+  {
+    "id": "21",
+    "title": "Jam",
+    "count": 120
+  }
+]
