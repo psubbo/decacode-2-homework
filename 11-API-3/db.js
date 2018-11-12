@@ -21,19 +21,21 @@ const db = {
         });        
     });    
   },
-// Не работает
+// Работает
   update: (id, request) => {
     fs.readFile(pathToJSON, 'utf8', (error, contents) => {
         let data = JSON.parse(contents);
         
-        let updatedData = data.forEach(el => {
+        let updatedData = data.map(el => {
           console.log(el);
           if (el.id == id) {
-          el.id = request.id;
-          el.count = parseInt(request.count);
-          el.title = request.title;
+            return {
+              id : request.id,
+              title : request.title,
+              count : parseInt(request.count)
+          }
         } else {
-          return ;
+          return el;
         }
       });
         console.log(updatedData);
